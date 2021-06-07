@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b"
+    tools:context=".Instagram">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="10dp"
+        android:text="Instagram"
+        android:textColor="@color/black"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/link2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_background"
+        android:hint="  Enter URL"
+        android:maxLines="1"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/download2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/link2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_style"
+        android:text="Download" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:background="@color/white"
+        app:itemTextColor="@drawable/tab_color"
+        app:itemIconTint="@drawable/tab_color"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"/>
+
+</RelativeLayout>

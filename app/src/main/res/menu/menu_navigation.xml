@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/YouTube"
+        android:title="YouTube"
+        android:icon="@drawable/ic_youtube" />
+
+    <item
+        android:id="@+id/Facebook"
+        android:title="Facebook"
+        android:icon="@drawable/ic_facebook" />
+
+    <item
+        android:id="@+id/Instagram"
+        android:title="Instagram"
+        android:icon="@drawable/ic_instagram" />
+
+    <item
+        android:id="@+id/Downloads"
+        android:title="Downloads"
+        android:icon="@drawable/ic_downloads" />
+
+</menu>
