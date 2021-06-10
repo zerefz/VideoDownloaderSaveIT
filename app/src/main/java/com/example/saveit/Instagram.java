@@ -60,21 +60,12 @@ public class Instagram extends AppCompatActivity {
 
                         String downURL = facebookFile.getHdUrl();
                         downURL = downURL.replace("&amp;","&");
-
                         downURL = downURL.replace("/instagram.fccu19-1.fna.fbcdn.net/","/scontent.cdninstagram.com/");
+
                         Log.e("DownloadURL","URL:"+downURL);
-                        String fileName = facebookFile.getFilename();
 
-                        if(fileName=="")
-                        {
-                            fileName="Instagram_Reels_"+genName();
-                        }
-                        if(fileName.contains("Facebook Watch"))
-                        {
-                            fileName=fileName.replace("Facebook Watch-&x98f; ","Facebook_Shorts_");
-                        }
+                        String fileName=genName(20);
                         downloadInstagramVideo(downURL,fileName);
-
                     }
 
                     @Override
@@ -138,14 +129,14 @@ public class Instagram extends AppCompatActivity {
         Toast.makeText(Instagram.this, "Download Started", Toast.LENGTH_SHORT).show();
     }
 
-    private String genName(){
+    private String genName(int n){
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";
 
-        StringBuilder sb = new StringBuilder(10);
+        StringBuilder sb = new StringBuilder(n);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < n; i++) {
             int index = (int)(AlphaNumericString.length() * Math.random());
             sb.append(AlphaNumericString.charAt(index));
         }
