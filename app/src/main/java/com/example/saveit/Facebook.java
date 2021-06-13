@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.saveit.FacebookAPI.FacebookExtractor;
 import com.example.saveit.FacebookAPI.FacebookFile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Facebook extends AppCompatActivity {
 
     EditText url;
@@ -55,7 +56,7 @@ public class Facebook extends AppCompatActivity {
                         String downURL = facebookFile.getHdUrl();
                         downURL = downURL.replace(".fccu19-1.fna.","-lhr8-2.xx.");
                         downURL = downURL.replace("&amp;","&");
-                        String fileName = facebookFile.getFilename();
+                        String fileName = "Facebook_"+genNameFB(20);
                         if(fileName.contains("Facebook Watch"))
                         {
                             fileName=fileName.replace("Facebook Watch-&x98f; ","Facebook_Shorts_");
@@ -73,6 +74,7 @@ public class Facebook extends AppCompatActivity {
 
                     @Override
                     protected void onExtractionFail(String Error) {
+                        //Should Remain Empty
                     }
                 };
 
@@ -113,10 +115,21 @@ public class Facebook extends AppCompatActivity {
         });
     }
 
+    private String genNameFB(int n){
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
 
+        StringBuilder sb = new StringBuilder(n);
+
+        for (int i = 0; i < n; i++) {
+            int index = (int)(AlphaNumericString.length() * Math.random());
+            sb.append(AlphaNumericString.charAt(index));
+        }
+        return sb.toString();
+    }
 
     private void downloadFacebookVideo(String url, String name){
-
         Uri downloadUri = Uri.parse(url);
         DownloadManager.Request req = new DownloadManager.Request(downloadUri);
         req.setTitle(name);

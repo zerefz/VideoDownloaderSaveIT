@@ -64,7 +64,7 @@ public class Instagram extends AppCompatActivity {
 
                         Log.e("DownloadURL","URL:"+downURL);
 
-                        String fileName=genName(20);
+                        String fileName="Instagram_"+genName(20);
                         downloadInstagramVideo(downURL,fileName);
                     }
 
